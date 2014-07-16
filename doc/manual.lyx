@@ -1,0 +1,1946 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+JIF a java editor for Inform
+\end_layout
+
+\begin_layout Author
+Alessandro Schillaci - Peter F.
+ Piggott
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Overview
+\end_layout
+
+\begin_layout Standard
+JIF is an Integrated Development Environment (IDE), written entirely in
+ Java, for the creation of text adventures based on Graham Nelson's Inform
+ standard.
+ With JIF it's possible to edit,compile and run a text adventure in the
+ z-code and glulx formats.
+\end_layout
+
+\begin_layout Standard
+Inform 7 has been developed with a new Integrated Editor but JIF can be
+ used in any Inform 6 or 7 Environments
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The project has started in the 2003 and now it's in a stable state for productio
+n, and the latest version is the 3.6 (Feb 2013).
+ This project is released under the GNU GPL Licence.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Main Features:
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Written in Java (multiplatform, it runs on any Operative System: Windows,
+ Linux, Unix, MacOSX)
+\end_layout
+
+\begin_layout Itemize
+Syntax Highlighting support
+\end_layout
+
+\begin_layout Itemize
+Inform and Glulx support
+\end_layout
+
+\begin_layout Itemize
+Code Assistant and Template Manager, to speed your code
+\end_layout
+
+\begin_layout Itemize
+Multi-language support: English, Italian, Spanish, German and French
+\end_layout
+
+\begin_layout Itemize
+Project management: support for compilation of wide projects
+\end_layout
+
+\begin_layout Itemize
+Switches Manager: customize your switches passed to compiler.
+\end_layout
+
+\begin_layout Section*
+Configuration
+\end_layout
+
+\begin_layout Standard
+What's new?
+\end_layout
+
+\begin_layout Standard
+Jif has been improved, many bugs have been fixed and the configuration managemen
+t revised.
+ The main change is that now Jif configuration information is stored into
+ a single configurations file.
+ You can edit this file ("Jif.cfg") out of Jif and restart Jif to see your
+ changes take effect.
+ You can also edit this file within Jif (without the need to re-start Jif):
+ just go to the Options-> Jif INI file (menu) and edit it.
+ Then save and see the changes on Jif.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For the Linux/Unix/MacOsX users: now Jif can load the configuration from
+ a different file.
+ Just pass a parameter to the VM to tell Jif which file it has to use as
+ configuration file.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+E.G.
+ : launch Jif with these parameters
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+java -Duser.language=en -Duser.region=US 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+-Djif.configuration=[NEWPATHFILE] -cp .
+ -jar Jif.jar
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The flags 
+\series bold
+-Duser.language=en
+\series default
+ and 
+\series bold
+-Duser.region=US
+\series default
+ let Jif to load the English version 
+\end_layout
+
+\begin_layout Itemize
+Tha flag 
+\series bold
+-Djif.configuration
+\series default
+ lets Jif to use [NEWPATHFILE] as configuration file (instead of 
+\series bold
+JIF.cfg
+\series default
+)
+\end_layout
+
+\begin_layout Standard
+From this version, you can put the Jif.jar file where you want to and the
+ configuration file in another place.
+\end_layout
+
+\begin_layout Standard
+So, Let's see how to change/customize your configuration file for the Jif.
+ Open the "Jif.cfg" file with Jif (or another text editor) and follow these
+ sections.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Notes:
+\end_layout
+
+\begin_layout Itemize
+If you edit the configuration file within Jif, you can save it and see the
+ changes take effect, without restarting Jif.
+ If you want to edit the config file within another text editor, you can
+ do that, but you have to restart Jif to see your changes.
+\end_layout
+
+\begin_layout Itemize
+If you want to edit the Jif.cfg file to make your own copy, please create
+ a backup first of the original file.
+ If you miss something, you wouldn't be able to run Jif properly.
+ In this case, don't send me any feedback error on what you've done.
+ Just rename your Jif.cfg backup and retry.
+ Keep this in mind and keep on reading this doc.
+\end_layout
+
+\begin_layout Section*
+[ALTKEYS] Section
+\end_layout
+
+\begin_layout Standard
+Jif is highly customizable.
+\end_layout
+
+\begin_layout Standard
+If you want to execute a command (an external command) just by pressing
+ a key combination you can do it.
+ If you want to type "a"+"ALT" and see the "^" character or something like
+ this, read this section.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Example:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[ALTKEYS]w,{} 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[ALTKEYS]a,^
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[ALTKEYS]t,~ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[ALTKEYS]s,`
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[ALTKEYS]q,[] 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[ALTKEYS]p,| 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[EXECUTE]e,explorer.exe 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[EXECUTE]d,hh.exe C:
+\backslash
+Jif
+\backslash
+doc
+\backslash
+prova.chm ...
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ok, this should be self explained.
+ You can add a key "listener" to Jif, simply add a line like these.
+ Just follow this format:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[ALTKEYS]<CHARACTER +"ALT">,<CHARACTER/STRING TYPED>
+\end_layout
+
+\begin_layout Standard
+or
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[EXECUTE]<CHARACTER + "ALT">,<COMMAND TO EXECUTE>
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let's go for an example.
+ You want to add a key to type the "()" (open-close parenthesis) in just
+ one key press? You want to associate it to the "k" key? Simply, add this
+ line to your Jif.cfg file.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[ALTKEYS]k,()
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Open Option->Jif INI file menu, edit the file adding the previous line and
+ save it.
+ Now your changes are ready.
+ Open a file (or create a new one) and press "ALT+k".
+ You should see the "()" typed at the current cursor position.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Another example? Do you want to launch a pdf reader with the DM4 manual
+ within Jif? Simply add this line to the [ALTKEYS] Section.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[EXECUTE]o,C:
+\backslash
+Acrobat 7.0
+\backslash
+AcroRd32.exe C:
+\backslash
+DM4.pdf
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Notes:
+\end_layout
+
+\begin_layout Itemize
+on Linux/Unix Systems this could have some problems.
+ Just test it and feedback to me.
+ On win32 systems this runs fine.
+\end_layout
+
+\begin_layout Itemize
+pay attention not to use ALT keys combinations that are already used by
+ the operating system (like ALT+X and others).
+ In this case this "re-mapping" of ALT keys will be unuseful.
+ (and if you type ALT+X, Jif will shutdown in many operating systems).
+ So, be careful and use your mind
+\end_layout
+
+\begin_layout Section*
+[HELPEDCODE] Section 
+\end_layout
+
+\begin_layout Standard
+Ok.
+ What's the meaning of "helpedcode"? Sorry, this isn't code completion.
+ This is abbreviation management.
+\end_layout
+
+\begin_layout Standard
+You want to insert the 
+\series bold
+"animante"
+\series default
+ keyword just typing 
+\series bold
+"an"
+\series default
+ characters? You can do with the HELPEDCODE section.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[HELPEDCODE]an,animate
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now you can insert "an" and press the CTRL+SPACE keys.
+ Jif will substitute the "an" characters with the "animate" keyword.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+But, hey, stop.
+ Give up.
+ Wait a moment.
+ Rewind the tape.
+ What the hell is the difference between the ALTKEY SECTION and the HELPEDCODE
+ section?
+\end_layout
+
+\begin_layout Standard
+Ok.
+ You're right.
+\end_layout
+
+\begin_layout Standard
+In the HELPEDCODE section you can choose where the cursor will be after
+ the substitution.
+ You can also simulate a RETURN key press or a TAB key press.
+ Consider this example.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[HELPEDCODE]ba,before [;@],[ret]after [;],
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+You insert "ba" and press the CTRL+SPACE.
+ Jif will insert: before[;(THE CURSOR IS HERE)],(<---RETURN)
+\end_layout
+
+\begin_layout Standard
+after[;],
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Note:
+\end_layout
+
+\begin_layout Standard
+[ret] = RETURN character 
+\end_layout
+
+\begin_layout Standard
+[tab] = TAB character 
+\end_layout
+
+\begin_layout Standard
+@ = Cursor Position
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So take a look at the HELPEDCODE section and you will find that this is
+ simpler than you think.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[HELPEDCODE](,(@) 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[HELPEDCODE][,[@] 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[HELPEDCODE][;[;@], 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[HELPEDCODE]ab,absent 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[HELPEDCODE]af,after [;@], 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[HELPEDCODE]an,animate 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[HELPEDCODE]ba,before [;@],[ret]after [;]
+\end_layout
+
+\begin_layout Section*
+[MAPPING] Section
+\end_layout
+
+\begin_layout Standard
+So, what about the ZCODE characters? I mean the "@`e" that stands for è
+ and so on.
+ If you want to write a game which is compatible with most of the Inform
+ Interpreters (zcode), you should use these special characters.
+ Jif can manage this for you.
+\end_layout
+
+\begin_layout Standard
+Let's take a look at the MAPPING section.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[MAPPING]é,@'e 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[MAPPING]è,@`e 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[MAPPING]à,@`a 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[MAPPING]ì,@`i
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nothing hard here.
+ It is all linear.
+ If you press the "è" character, for example, Jif will type the ZCODE special
+ characters "@'e" into the main textarea, at the current cursor position.
+\end_layout
+
+\begin_layout Section*
+[MENU] Section 
+\end_layout
+
+\begin_layout Standard
+Ok.
+ Prepare yourself: things are a little bit harder in this section.
+\end_layout
+
+\begin_layout Standard
+When the cursor is in the main textarea (the input code area) and you press
+ the mouse's right button, a popup menu will appear.
+ The main Menu Item is "Insert new".
+ This menu item lets you insert a piece of text.
+ You can customize the menu entries in this menu.
+ Let's look at the actual configuration entries.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[MENU][Class]*
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[MENU][Class]Generic Class,Class CLASS_NAME §has ATTRIBUTE;
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[MENU][Class]Room Class,Class Room§ has light; ...
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The first line is to define a new Menu: you'll see "Class" as a menu name.
+ Ok.
+ Ok.
+ ok.
+ And what about the "Class" menu's contents? Yes.
+ See the last two lines.
+ "Generic Class" and "Room Class" are sub-items for the main "Class" menu.
+ If you click on "Room", Jif will append to your current file, this string:
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Class CLASS_NAME 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+has ATTRIBUTE;
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So, the "insert new" menu structure will be:
+\end_layout
+
+\begin_layout Itemize
+Insert new
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Class
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Generic Class
+\end_layout
+
+\begin_layout Itemize
+Room Class 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+Note that the "§" character is converted into an enter command (Just as
+ if the user had pressed the "Enter" key).
+ Do you want to see an example in action? Yes, I guess, you want to.
+\end_layout
+
+\begin_layout Standard
+The right format for the definition of a new menu is:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[MENU][<Main Menu Name>]*
+\end_layout
+
+\begin_layout Standard
+The MenuItems are added to a Main Menu in this way:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[MENU][<Main Menu Name>]<Menu item name>,<piece of text you want to insert>
+\end_layout
+
+\begin_layout Standard
+Let's create a new menu: "NPC" and create a new menu item.
+ Open the "Jif.cfg" file.
+ Go to the MENU Section and append this:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[MENU][NPC]* [MENU][NPC]Nick,NPC nick "Nick"§ with name 'nick',§ before
+ [;],§ after[;],§ has male proper; 
+\end_layout
+
+\begin_layout Standard
+Ok.
+ Finished.
+ Go to the current open TextArea and click on the right mouse button.
+ Choose: "Insert new"->"NPC"->"Nick" Jif will append this code:
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Nick,NPC nick "Nick" 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+with name 'nick', 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+before [;], 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+after[;], 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+has male proper; 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+That's all.
+ If you create an interesting popup menu configuration, please send it to
+ me: I'll add it into Jif official site.
+ Thanks.
+\end_layout
+
+\begin_layout Section*
+[SWITCH] Section
+\end_layout
+
+\begin_layout Standard
+If you're about to compile an inform game, you should feel confident with
+ the inform "switches".
+ These are just parameters passed to the compiler and are used to tell the
+ compiler how create to create your zcode (ulx) file.
+ Of course, with Jif, you can manage them without any effort.
+ 
+\end_layout
+
+\begin_layout Standard
+In the "Jif.cfg" file there is a list of switches available within Jif.
+ Let's look at the [SWITCH] section.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[SWITCH]-c,off
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[SWITCH]-d,on
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[SWITCH]-d2,off
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[SWITCH]-f,off
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ok.
+ This part isn't the hardest one.
+ Every switch can be set to "on" or "off".
+ If it is set to "on", Jif will use it and will pass it to the compiler.
+ If you need a new switch that doesn't exist in the Jif.cfg file, you can
+ add it to the SWITCH section and save the configuation file.
+ Within the Switch Manager you can control which switches you wish to pass
+ to the compiler.
+ Open Switch Manager to see the switch you've added.
+\end_layout
+
+\begin_layout Standard
+Note: when you create/save a project, all the switches states are stored
+ into the projects jpf file (which stands for [J]if [P]roject [F]ile).
+ So you can have a default configuration for the switches, and a different
+ one for each project you create.
+ Just create a new project.
+ Whenever you save it, Jif will save the current switches configuration
+ also.
+ 
+\end_layout
+
+\begin_layout Section*
+[SYNTAX] Section 
+\end_layout
+
+\begin_layout Standard
+Jif supports an Inform syntax highlighting system: all the keywords have
+ different colours.
+ This information is stored in the SYNTAX section.
+ Let's look at the config file again.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[SYNTAX][attribute]absent
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[SYNTAX][keyword]creature
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[SYNTAX][property]add_to_scope
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[SYNTAX][verb]Answer
+\series default
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As you can see, Jif supports 4 different keywords types and you can choose
+ 4 different colours for attribute, keyword, property and verb (within the
+ Jif Settings Dialog).
+ Just add the keywords you would like highlighted into the "Jif.cfg" file.
+ Save the file and you will see that now Jif recognizes and highlights the
+ new keywords with the type colour listed.
+\end_layout
+
+\begin_layout Standard
+Note: These keywords are not case sensitive (because Inform's syntax is
+ generally not case sensitive, as you probably know).
+ So you can write the keywords in any case: absent or Absent or AbSeNt or
+ ABSENT
+\end_layout
+
+\begin_layout Standard
+Jif will treat them all the same and colour them as an attribute.
+ But you only need to add one entry in the Jif.cfg file:
+\end_layout
+
+\begin_layout Standard
+[SYNTAX][attribute]absent
+\end_layout
+
+\begin_layout Section*
+[SYMBOLS] Section
+\end_layout
+
+\begin_layout Standard
+This section is like the [ALTKEYS] one, but that Jif will show a Symbols
+ List to choose from.
+ You can add anything you like, maybe something you don't use frequently
+ in your inform code or just keys that don't exist in you keyboard layout
+ like @<<,@>>,ä,à,á,â,ã,å and so on.
+\end_layout
+
+\begin_layout Standard
+The format is the same: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[SYMBOLS]@<< 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[SYMBOLS]@>> 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[SYMBOLS]ä 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[SYMBOLS]à 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[SYMBOLS]á 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[SYMBOLS]â 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[SYMBOLS]ã 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[SYMBOLS]å
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+You can add a new "symbol", save and click on the Symbols list Button (on
+ the toolbar) to see the list with the new entry.
+ Use it whatever you like.
+\end_layout
+
+\begin_layout Section*
+[PATH] Section 
+\end_layout
+
+\begin_layout Standard
+This is the Jif's core configuration.
+ If you don't set the inform compiler path, Jif will not be able to launch
+ the compilation process or execute your adventure within the inform / glulx
+ interpreter.
+\end_layout
+
+\begin_layout Standard
+The first time you run Jif, this section will be empty.
+ You can fill it in two ways:
+\end_layout
+
+\begin_layout Enumerate
+go to the Options->Settings->Path panel and fill them.
+ Then Save.
+\end_layout
+
+\begin_layout Enumerate
+open the Jif.cfg file and edit them by hand (suggested only if you know what
+ you're doing.)
+\end_layout
+
+\begin_layout Standard
+When you've set and saved the Jif.cfg file, you'll have a situation like
+ this:
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[LIBRAYPATH]C:
+\backslash
+Inform
+\backslash
+Lib
+\backslash
+Base 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[LIBRAYPATHSECONDARY1]C:
+\backslash
+Inform
+\backslash
+Lib
+\backslash
+Contrib 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[LIBRAYPATHSECONDARY2] 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[LIBRAYPATHSECONDARY3] 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[COMPILEDPATH]C:
+\backslash
+Inform
+\backslash
+Games 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[INTERPRETERZCODEPATH]C:
+\backslash
+Inform
+\backslash
+Bin
+\backslash
+interpreter
+\backslash
+Frotz
+\backslash
+Frotz.exe
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[INTERPRETERGLULXPATH]C:
+\backslash
+Inform
+\backslash
+Bin
+\backslash
+interpreter
+\backslash
+Gargoyle
+\backslash
+Gargoyle.exe 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[COMPILERPATH]C:
+\backslash
+Inform
+\backslash
+Bin
+\backslash
+compiler
+\backslash
+inform.exe 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[BRESPATH]C:
+\backslash
+Inform
+\backslash
+Bin
+\backslash
+tools
+\backslash
+Blorb
+\backslash
+bres.exe
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[BLCPATH]C:
+\backslash
+Inform
+\backslash
+Bin
+\backslash
+tools
+\backslash
+Blorb
+\backslash
+blc.exe
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+These are my current settings, yours may well be different.
+ So, I'll explain them.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[LIBRAYPATH]
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[LIBRAYPATHSECONDARY1]
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[LIBRAYPATHSECONDARY2] 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[LIBRAYPATHSECONDARY3]
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+These are the Libraries paths.
+ You can set the main library path.
+ Then you can manage 3 different Library locations.
+ In case you have source file in different packages, and you don't want
+ to merge all in one directory.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[COMPILEDPATH]
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is the path where Jif will put the compiled files.
+ If you use the project management (this is recommended) the compiled files
+ will be put in the project main directory.
+ Be sure you've set this path in ANY CASE.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[INTERPRETERZCODEPATH]
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[INTERPRETERGLULXPATH]
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Do you use Frotz as Inform Interpreter? Ok.
+ Set the [INTERPRETERZCODEPATH] path, to the absolute path to Frotz.
+ Same thing for the Glulx Interpreter (Wingit, WinGlulxe, Gargoyle).
+ Here you can choose your favourite Interpreter.
+ Just do it.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[COMPILERPATH]
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Yes, this is the most important path to set in the Jif.cfg file.
+ The Inform compiler.
+ You know what it is, don't you? If you don't, please take time to read
+ about it and understand what it is and how to use it.
+ Read the DM4, the Inform Beginners Guide to Inform an Inform tutorial.
+\end_layout
+
+\begin_layout Standard
+Don't use Jif until you understand the basic idea of what a "z-code" file
+ is.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[BRESPATH] 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[BLCPATH]
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+These tools aren't mandatory.
+ These are for the blb format.
+ If you only want to create a zcode adventure, you can leave them blank.
+ If you want to create a BLB file (or ULX) within Jif, you have to set them
+ point to the right absolute paths for these two tools.
+ Then you can make the resources, compile to ulx format and (finally) create
+ a single-bundle BLB file to distribute to the waiting world, out there.
+\end_layout
+
+\begin_layout Section*
+[SETTINGS] Section
+\end_layout
+
+\begin_layout Standard
+This section is created by JIF.
+ Do not touch it, if you don't know how to manage it.
+ In this section Jif stores all the configuration for the graphic layout,
+ such as the colour management, the actual options checked and so on.
+\end_layout
+
+\begin_layout Standard
+Warning!!! Do not edit this section by hand.
+ Use the configuration Panel.
+\end_layout
+
+\begin_layout Section*
+[RECENTFILES] Section
+\end_layout
+
+\begin_layout Standard
+This section is created by JIF.
+ Do not touch it, if you don't know how to manage it.
+ This section stores the list of last opened files.
+\end_layout
+
+\begin_layout Standard
+Warning!!! Do not edit this section by hand.
+ Use the configuration Panel.
+\end_layout
+
+\begin_layout Section*
+Shortcuts Section
+\end_layout
+
+\begin_layout Subsection*
+Edit Mode
+\end_layout
+
+\begin_layout Itemize
+CTRL+N New file
+\end_layout
+
+\begin_layout Itemize
+CTRL+O Open file
+\end_layout
+
+\begin_layout Itemize
+CTRL+S Save file 
+\end_layout
+
+\begin_layout Itemize
+CTRL+SHIFT+S Save all 
+\end_layout
+
+\begin_layout Itemize
+CTRL+Q Close file 
+\end_layout
+
+\begin_layout Itemize
+CTRL+P Print 
+\end_layout
+
+\begin_layout Itemize
+ALT+X Exit 
+\end_layout
+
+\begin_layout Itemize
+CTRL+A Select all 
+\end_layout
+
+\begin_layout Itemize
+CTRL+X,SHIFT+CANC Cut 
+\end_layout
+
+\begin_layout Itemize
+CTRL+C,CTRL+INS Copy 
+\end_layout
+
+\begin_layout Itemize
+CTRL+V,SHIFT+INS Paste 
+\end_layout
+
+\begin_layout Itemize
+CTRL+Z Undo 
+\end_layout
+
+\begin_layout Itemize
+CTRL+Y Redo 
+\end_layout
+
+\begin_layout Itemize
+TAB (or ALT + ->) Right shift selected text block 
+\end_layout
+
+\begin_layout Itemize
+SHIFT+TAB (or ALT + <-) Left shift selected text block 
+\end_layout
+
+\begin_layout Itemize
+CTRL+, Comment selection 
+\end_layout
+
+\begin_layout Itemize
+CTRL+.
+ Uncomment selection 
+\end_layout
+
+\begin_layout Itemize
+CTRL+F2 Set/Reset Bookmark 
+\end_layout
+
+\begin_layout Itemize
+F2 Go to next bookmark 
+\end_layout
+
+\begin_layout Itemize
+F11 Toggle FullScreen 
+\end_layout
+
+\begin_layout Itemize
+F1 View help
+\end_layout
+
+\begin_layout Subsection*
+Search Mode
+\end_layout
+
+\begin_layout Itemize
+F3 Search String (from the current file) 
+\end_layout
+
+\begin_layout Itemize
+CTRL+J Jump to the current word's definition 
+\end_layout
+
+\begin_layout Itemize
+CTRL+F3 Search String (from the whole project) 
+\end_layout
+
+\begin_layout Itemize
+CTRL+F Find selected string 
+\end_layout
+
+\begin_layout Itemize
+CTRL+R Find and replace 
+\end_layout
+
+\begin_layout Itemize
+CTRL+V Find object in source
+\end_layout
+
+\begin_layout Subsubsection*
+Project Management
+\end_layout
+
+\begin_layout Itemize
+CTRL+F4 New project 
+\end_layout
+
+\begin_layout Itemize
+F4 Open project
+\end_layout
+
+\begin_layout Subsection*
+Inform
+\end_layout
+
+\begin_layout Itemize
+F9 Compile 
+\end_layout
+
+\begin_layout Itemize
+CTRL+F9 Run 
+\end_layout
+
+\begin_layout Itemize
+F12 Build all 
+\end_layout
+
+\begin_layout Itemize
+CTRL+F12 Make blb
+\end_layout
+
+\begin_layout Itemize
+Right Button (mouse) Menu Popup 1 (from the Text Editor) Menu Popup 2 (from
+ the Project file list)
+\end_layout
+
+\begin_layout Section*
+Install JIF and other components
+\end_layout
+
+\begin_layout Standard
+From the 3.5 version of JIF (and above), the main application is released
+ in the JAR format.
+ To install it, simply double-click on the JIF.jar file.
+\end_layout
+
+\begin_layout Standard
+Since the 3.6 version, a Java Runtime 1.7 version is required.
+\end_layout
+
+\begin_layout Standard
+The same author has released an 
+\begin_inset Quotes eld
+\end_inset
+
+Inform Pack
+\begin_inset Quotes erd
+\end_inset
+
+: a collections of Inform/Glulx tools pre-configured to work.
+ (see http://www.slade.altervista.org)
+\end_layout
+
+\begin_layout Section*
+Copyright and License
+\end_layout
+
+\begin_layout Standard
+Copyright (C) 2003-2013 Alessandro Schillaci (http://www.slade.altervista.org/,
+ silver.slade@tiscali.it)
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Jif is free software; you can redistribute it and/or modify it under the
+ terms of the GNU General Public License as published by the Free Software
+ Foundation; either version 2 of the License, or (at your option) any later
+ version.
+\end_layout
+
+\begin_layout Standard
+This program is distributed in the hope that it will be useful, but WITHOUT
+ ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ FOR A PARTICULAR PURPOSE.
+ See the GNU General Public License for more details.
+\end_layout
+
+\begin_layout Standard
+You should have received a copy of the GNU General Public License along
+ with Jif; if not, write to the Free Software
+\end_layout
+
+\begin_layout Section*
+Credits
+\end_layout
+
+\begin_layout Standard
+A special thank goes to Peter F.
+ Piggott for his constant help to improve JIF.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+JIF Development:
+\end_layout
+
+\begin_layout Itemize
+Alessandro Schillaci
+\end_layout
+
+\begin_layout Itemize
+Luis Fernandez
+\end_layout
+
+\begin_layout Itemize
+Peter F.
+ Piggott
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Contributors:
+\end_layout
+
+\begin_layout Itemize
+Paolo Lucchesi
+\end_layout
+
+\begin_layout Itemize
+Vincenzo Scarpa
+\end_layout
+
+\begin_layout Itemize
+Baltasar G.
+ Perez-Schofield
+\end_layout
+
+\begin_layout Itemize
+Christof Menear
+\end_layout
+
+\begin_layout Itemize
+Giles Boutel
+\end_layout
+
+\begin_layout Itemize
+Javier San Josè
+\end_layout
+
+\begin_layout Itemize
+David Moreno
+\end_layout
+
+\begin_layout Itemize
+Eric Forgeot
+\end_layout
+
+\begin_layout Itemize
+Max Kalus
+\end_layout
+
+\begin_layout Itemize
+Adrien Saurat
+\end_layout
+
+\begin_layout Itemize
+Alex V Flinsch
+\end_layout
+
+\begin_layout Itemize
+Daryl McCullough
+\end_layout
+
+\begin_layout Itemize
+Giancarlo Niccolai
+\end_layout
+
+\begin_layout Itemize
+Ignazio di Napoli
+\end_layout
+
+\begin_layout Itemize
+Joerg Rosenbauer
+\end_layout
+
+\begin_layout Itemize
+Matteo De Simone
+\end_layout
+
+\begin_layout Itemize
+Tommaso Caldarola
+\end_layout
+
+\begin_layout Itemize
+Jenesis
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Third part components:
+\end_layout
+
+\begin_layout Itemize
+Everaldo: Some Icons used by Jif ( www.everaldo.com )
+\end_layout
+
+\begin_layout Section*
+Contacts
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Author Site
+\series default
+: http://www.slade.altervista.org/ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Main Project Site
+\series default
+: http://developer.berlios.de/projects/jif/
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Email
+\series default
+: silver.slade@tiscalinet.it (Alessandro Schillaci) 
+\end_layout
+
+\end_body
+\end_document
