@@ -1,13 +1,11 @@
-_____________________________________________________________________________________________
-                       >>>>>>> JIF - a java editor for Inform <<<<<<<
-                                       Version 3.6.1
-                          © Copyright 2003-2014 Alessandro Schillaci
-_____________________________________________________________________________________________
+								JIF - a java editor for Inform
+								
+                                       Version 3.6.1									   
+                               2003-2014 Alessandro Schillaci
 
 >>> Last Update of this document: 2014-07-16 <<<
 
->>> [ Overview ]___________________________________________________________________
-      ^^^^^^^^^
+>>> [ Overview ]
 
 JIF is an Integrated Development Environment (IDE), written entirely in Java, for the creation 
 of text adventures based on Graham Nelson's Inform standard. With JIF it's possible to edit,
@@ -20,8 +18,8 @@ The project has started in the 2003 and now it's in a stable state for productio
 latest version is the 3.6 (Feb 2013). This project is released under the GNU GPL Licence.
 
 
->>> [ Shortcuts  ]__________________________________________________________________
-      ^^^^^^^^^
+>>> [ Shortcuts  ]
+
 Edit Mode:
 
 CTRL+N                  New file
@@ -73,8 +71,8 @@ Right Button (mouse)    Menu Popup 1 (from the Text Editor)
 
 
 
->>> [ Jif Configuration and other stuff ]___________________________________________
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>>> [ Jif Configuration and other stuff ]
+      
 What's new?
 Jif has been improved, many bugs have been fixed and the configuration management revised.
 The main change is that now Jif configuration information is stored into a single INI file.
@@ -109,8 +107,7 @@ In this case, don't send me any feedback error on what you've done.
 Just rename your Jif.cfg backup and retry. Keep this in mind and keep on reading this doc.
 
 
->>> [ [ALTKEYS] Section ]___________________________________________
-      ^^^^^^^^^^^^^^^^^
+>>> [ [ALTKEYS] Section ]
 
 Jif is highly customizable. If you want to execute a command (an external command) just by
 pressing a key combination you can do it. 
@@ -167,8 +164,8 @@ system (like ALT+X and others). In this case this "re-mapping" of ALT keys will 
 So, be careful and use your mind.
 
 
->>> [ [HELPEDCODE] Section ]___________________________________________
-      ^^^^^^^^^^^^^^^^^^^^
+>>> [ [HELPEDCODE] Section ]
+      
 Ok. What's the meaning of "helpedcode"? Sorry, this isn't code completion. 
 This is abbreviation management.
 
@@ -217,8 +214,7 @@ So take a look at the HELPEDCODE section and you will find that this is simpler 
 ...
 
 
->>> [ [MAPPING] Section ]___________________________________________
-      ^^^^^^^^^^^^^^^^^
+>>> [ [MAPPING] Section ]
 
 So, what about the ZCODE characters? I mean the "@`e" that stands for "è" and so on.
 If you want to write a game which is compatible with most of the Inform Interpreters (zcode),
@@ -238,8 +234,7 @@ Nothing hard here. It is all linear. If you press the "è" character, for example
 the ZCODE special characters "@'e" into the main textarea, at the current cursor position.
 
 
->>> [ [MENU] Section ]___________________________________________
-      ^^^^^^^^^^^^^^
+>>> [ [MENU] Section ]
 
 Ok. Prepare yourself things are a little bit harder in this section.
 When the cursor is in the main textarea (the input code area) and you press the mouse's right 
@@ -307,15 +302,14 @@ That's all. If you create an interesting popup menu configuration, please send i
 it into Jif official site. Thanks.
 
 
->>> [ [SWITCH] Section ]___________________________________________
-      ^^^^^^^^^^^^^^^^
+>>> [ [SWITCH] Section ]
+
 If you're about to compile an inform game, you should feel confident with the inform "switches".
 These are just parameters passed to the compiler and are used to tell the compiler how create to
 create your zcode (ulx) file. Of course, with Jif, you can manage them without any effort.
 In the "Jif.cfg" file there is a list of switches available within Jif. Let's look at the 
 
 [SWITCH] section.
-
 ...
 [SWITCH]-c,off
 [SWITCH]-d,on
@@ -326,11 +320,9 @@ In the "Jif.cfg" file there is a list of switches available within Jif. Let's lo
 Ok. This part isn't the hardest one. Every switch can be set to "on" or "off". If it is set
 to "on", Jif will use it and will pass it to the compiler.
 If you need a new switch that doesn't exist in the Jif.cfg file, you can add it to the SWITCH
-section and save the configuation file.
+section and save the configuration file.
 Within the Switch Manager you can control which switches you wish to pass to the compiler. Open
 Switch Manager to see the switch you've added.
-
-
 
 Note: when you create/save a project, all the switches states are stored into the projects
 jpf file (which stands for [J]if [P]roject [F]ile). So you can have a default configuration 
@@ -338,8 +330,7 @@ for the switches, and a different one for each project you create. Just create a
 Whenever you save it, Jif will save the current switches configuration also.
 
 
->>> [ [SYNTAX] Section ]___________________________________________
-      ^^^^^^^^^^^^^^^^
+>>> [ [SYNTAX] Section ]
 
 Jif supports an Inform syntax highlighting system: all the keywords have different colours.
 This information is stored in the SYNTAX section. Let's look at the config file again.
@@ -368,8 +359,7 @@ entry in the Jif.cfg file:
 [SYNTAX][attribute]absent
 
 
->>> [ [SYMBOLS] Section ]___________________________________________
-      ^^^^^^^^^^^^^^^^^
+>>> [ [SYMBOLS] Section ]
 
 This section is like the [ALTKEYS] one, but that Jif will show a Symbols List to choose from.
 You can add anything you like, maybe something you don't use frequently in your inform code or
@@ -390,8 +380,7 @@ The format is the same:
 You can add a new "symbol", save and click on the Symbols list Button (on the toolbar) to see
 the list with the new entry. Use it whatever you like.
 
->>> [ [PATH] Section ]___________________________________________
-      ^^^^^^^^^^^^^^
+>>> [ [PATH] Section ]
 
 This is the Jif's core configuration. If you don't set the inform compiler path, Jif will not
 be able to launch the compilation process or execute your adventure within the inform / 
@@ -432,16 +421,12 @@ packages, and you don't want to merge all in one directory.
 [COMPILEDPATH]
 
 
-
-
 This is the path where Jif will put the compiled files. If you use the project management 
 (this is recommended) the compiled files will be put in the project main directory.
 Be sure you've set this path in ANY CASE.
 
 [INTERPRETERZCODEPATH]
 [INTERPRETERGLULXPATH]
-
-
 
 
 Do you use Frotz as Inform Interpreter? Ok. Set the [INTERPRETERZCODEPATH] path, to the
@@ -469,8 +454,7 @@ Then you can make the resources, compile to ulx format and (finally) create a si
 BLB file to distribute to the waiting world, out there.
 
 
->>> [ [SETTINGS] Section ]___________________________________________
-       ^^^^^^^^^^^^^^^^^
+>>> [ [SETTINGS] Section ]
 
 This section is created by JIF. Do not touch it, if you don't know how to manage it.
 In this section Jif stores all the configuration for the graphic layout, such as the 
@@ -478,8 +462,7 @@ colour management, the actual options checked and so on.
 
 Warning!!! Do not edit this section by hand. Use the configuration Panel.
 
->>> [ [RECENTFILES] Section ]___________________________________________
-       ^^^^^^^^^^^^^^^^^^^^
+>>> [ [RECENTFILES] Section ]
 
 This section is created by JIF. Do not touch it, if you don't know how to manage it.
 This section stores the list of last opened files.
@@ -487,7 +470,7 @@ This section stores the list of last opened files.
 
 Warning!!! Do not edit this section by hand. Use the configuration Panel.
 
->>> [Install JIF and other components]_________________________________________________________
+>>> [Install JIF and other components]
 
 * Install JIF
 From the 3.5 version of JIF (and above), the main application is released in the 
@@ -515,7 +498,7 @@ pre-configured to work. (see http://www.slade.altervista.org)
 
 >>> [Copyright and License]____________________________________________________________________
 
-Copyright (C) 2003-2013  Alessandro Schillaci
+Copyright (C) 2003-2014  Alessandro Schillaci
 
 WeB   : http://www.slade.altervista.org/
 e-m@il: silver.slade@tiscali.it
@@ -534,7 +517,7 @@ You should have received a copy of the GNU General Public License
 along with Jif; if not, write to the Free Software
 
 
->>> [Credits]__________________________________________________________________________________
+>>> [Credits]
 
 A special thank goes to Peter F. Piggott for his constant help to improve JIF.
 
@@ -569,10 +552,9 @@ Third part components:
 
     * Everaldo: Some Icons used by Jif ( www.everaldo.com )
 
-_____________________________________________________________________________________________
+
                       Web:      http://www.slade.altervista.org/   
                     Project:  https://github.com/silverslade/jif
                      Email:    silver.slade@tiscalinet.it 
 
                                 (Alessandro Schillaci)
-_____________________________________________________________________________________________
