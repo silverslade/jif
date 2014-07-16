@@ -1,11 +1,10 @@
-								JIF - a java editor for Inform
-								
-                                       Version 3.6.1									   
-                               2003-2014 Alessandro Schillaci
+h1. JIF - a java editor for Inform
 
->>> Last Update of this document: 2014-07-16 <<<
+Version 3.6.1									   
+2003-2014 Alessandro Schillaci
+(Last Update of this document: 2014-07-16)
 
->>> [ Overview ]
+h2. Overview
 
 JIF is an Integrated Development Environment (IDE), written entirely in Java, for the creation 
 of text adventures based on Graham Nelson's Inform standard. With JIF it's possible to edit,
@@ -18,7 +17,7 @@ The project has started in the 2003 and now it's in a stable state for productio
 latest version is the 3.6 (Feb 2013). This project is released under the GNU GPL Licence.
 
 
->>> [ Shortcuts  ]
+h2. Shortcuts
 
 Edit Mode:
 
@@ -71,7 +70,7 @@ Right Button (mouse)    Menu Popup 1 (from the Text Editor)
 
 
 
->>> [ Jif Configuration and other stuff ]
+h2. Jif Configuration and other stuff
       
 What's new?
 Jif has been improved, many bugs have been fixed and the configuration management revised.
@@ -107,7 +106,7 @@ In this case, don't send me any feedback error on what you've done.
 Just rename your Jif.cfg backup and retry. Keep this in mind and keep on reading this doc.
 
 
->>> [ [ALTKEYS] Section ]
+h2. [ALTKEYS] Section
 
 Jif is highly customizable. If you want to execute a command (an external command) just by
 pressing a key combination you can do it. 
@@ -164,7 +163,7 @@ system (like ALT+X and others). In this case this "re-mapping" of ALT keys will 
 So, be careful and use your mind.
 
 
->>> [ [HELPEDCODE] Section ]
+h2. [HELPEDCODE] Section
       
 Ok. What's the meaning of "helpedcode"? Sorry, this isn't code completion. 
 This is abbreviation management.
@@ -214,7 +213,7 @@ So take a look at the HELPEDCODE section and you will find that this is simpler 
 ...
 
 
->>> [ [MAPPING] Section ]
+h2. [MAPPING] Section
 
 So, what about the ZCODE characters? I mean the "@`e" that stands for "è" and so on.
 If you want to write a game which is compatible with most of the Inform Interpreters (zcode),
@@ -234,7 +233,7 @@ Nothing hard here. It is all linear. If you press the "è" character, for example
 the ZCODE special characters "@'e" into the main textarea, at the current cursor position.
 
 
->>> [ [MENU] Section ]
+h2. [MENU] Section
 
 Ok. Prepare yourself things are a little bit harder in this section.
 When the cursor is in the main textarea (the input code area) and you press the mouse's right 
@@ -302,7 +301,7 @@ That's all. If you create an interesting popup menu configuration, please send i
 it into Jif official site. Thanks.
 
 
->>> [ [SWITCH] Section ]
+h2. [SWITCH] Section
 
 If you're about to compile an inform game, you should feel confident with the inform "switches".
 These are just parameters passed to the compiler and are used to tell the compiler how create to
@@ -330,7 +329,7 @@ for the switches, and a different one for each project you create. Just create a
 Whenever you save it, Jif will save the current switches configuration also.
 
 
->>> [ [SYNTAX] Section ]
+h2. [SYNTAX] Section
 
 Jif supports an Inform syntax highlighting system: all the keywords have different colours.
 This information is stored in the SYNTAX section. Let's look at the config file again.
@@ -359,7 +358,7 @@ entry in the Jif.cfg file:
 [SYNTAX][attribute]absent
 
 
->>> [ [SYMBOLS] Section ]
+h2. [SYMBOLS] Section
 
 This section is like the [ALTKEYS] one, but that Jif will show a Symbols List to choose from.
 You can add anything you like, maybe something you don't use frequently in your inform code or
@@ -380,7 +379,7 @@ The format is the same:
 You can add a new "symbol", save and click on the Symbols list Button (on the toolbar) to see
 the list with the new entry. Use it whatever you like.
 
->>> [ [PATH] Section ]
+h2. [PATH] Section
 
 This is the Jif's core configuration. If you don't set the inform compiler path, Jif will not
 be able to launch the compilation process or execute your adventure within the inform / 
@@ -454,7 +453,7 @@ Then you can make the resources, compile to ulx format and (finally) create a si
 BLB file to distribute to the waiting world, out there.
 
 
->>> [ [SETTINGS] Section ]
+h2. [SETTINGS] Section
 
 This section is created by JIF. Do not touch it, if you don't know how to manage it.
 In this section Jif stores all the configuration for the graphic layout, such as the 
@@ -462,7 +461,7 @@ colour management, the actual options checked and so on.
 
 Warning!!! Do not edit this section by hand. Use the configuration Panel.
 
->>> [ [RECENTFILES] Section ]
+h2. [RECENTFILES] Section
 
 This section is created by JIF. Do not touch it, if you don't know how to manage it.
 This section stores the list of last opened files.
@@ -470,7 +469,7 @@ This section stores the list of last opened files.
 
 Warning!!! Do not edit this section by hand. Use the configuration Panel.
 
->>> [Install JIF and other components]
+h2. Install JIF and other components
 
 * Install JIF
 From the 3.5 version of JIF (and above), the main application is released in the 
@@ -496,7 +495,7 @@ pre-configured to work. (see http://www.slade.altervista.org)
 * Download Bres Tools (bres and blc) and point JIF to them
 
 
->>> [Copyright and License]____________________________________________________________________
+h2. Copyright and License
 
 Copyright (C) 2003-2014  Alessandro Schillaci
 
@@ -517,7 +516,7 @@ You should have received a copy of the GNU General Public License
 along with Jif; if not, write to the Free Software
 
 
->>> [Credits]
+h2. Credits
 
 A special thank goes to Peter F. Piggott for his constant help to improve JIF.
 
