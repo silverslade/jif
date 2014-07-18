@@ -222,7 +222,7 @@ public final class JifConfigurationLexer {
                         case '(':
                         case ')':
                         case '!':
-                        case '£':
+                        case 'ï¿½':
                         case '$':
                         case '%':
                         case '^':
@@ -236,7 +236,7 @@ public final class JifConfigurationLexer {
                         case '~':
                         case '>':
                         case '<':
-                        case '¬':
+                        case 'Â¬':
                         case '`':
                         case ' ':
                         case '\t':
