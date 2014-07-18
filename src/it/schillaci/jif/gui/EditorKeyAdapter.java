@@ -75,7 +75,7 @@ public class EditorKeyAdapter extends KeyAdapter {
      * When you type a character which has to be "mapped" into
      * ZSCII code, this method rescue the correct character to replace.
      * Example:
-     * If user digits "è" character, this will be tranformed into the ZSCII format
+     * If user digits "Ã¨" character, this will be tranformed into the ZSCII format
      * "@`e"
      * @param ke The key typed by the user
      */

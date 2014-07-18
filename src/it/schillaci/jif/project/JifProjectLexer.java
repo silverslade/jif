@@ -222,7 +222,7 @@ public final class JifProjectLexer {
                         case '(':
                         case ')':
                         case '!':
-                        case '�':
+                        case '£':
                         case '$':
                         case '%':
                         case '^':

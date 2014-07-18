@@ -1,0 +1,188 @@
+                                        CHANGELOG
+                                        ========= 
+[NF]  New Feature
+[FIX] Bug Fixed
+
+JIF 3.6.1 (2013)
+==================
+- [FIX] Using standard Java Metal look (return to the origins)
+- [FIX] fixed configuration dialog under linux (some buttons aren't visible)
+- [FIX] fixed different font from Dialog,12 (popup menu)
+
+
+JIF 3.6 (Feb 2013)
+==================
+- [FIX] new Font for the GUI (Dialog, 12)
+- [FIX] adjustSplit method to limit console's dimension
+- [FIX] open changelog.txt now works
+- [FIX] changelog.txt and readme.txt has the caret's position set to zero
+- [FIX] default editor font is now Courier New,0,13
+- [FIX] new light gray color for the line numbers panel
+- [FIX] removed CaretListener (to optimize performance)
+
+- [FIX] All configuration settings saved correctly
+        * helped code check
+        * warning highlight colour
+        * frame location (X, Y)
+        * frame size (Height, Width)
+- [FIX] Definition search
+        * projects with text files. (INDEX OUT OF BOUNDS)
+        * Searching for an array name now works.
+- [FIX] Tree display algorithm improved:
+        * reference to parent class that does not exist displays a placeholder.
+        * all children of a class are displayed.
+        * all project classes displayed when scan project option set.
+        * project classes not displayed when displayed file is not in project.
+        * clicking any item that is not in the displayed file does nothing.
+        * mouse movements no longer expand level one of the tree.
+        * objects declared with nearby appear in the tree.
+        * every declaration on a line appears in the tree not just the first.
+- [FIX] Tab titles are now always reduced to less than 20 characters.
+- [FIX] Spaces in run inform/glulx/blorb interpreter messages.
+- [FIX] Spaces in not found message.
+- [FIX] No extra spaces when using ENTER key rather than mouse for inset symbol.
+- [FIX] Switches are not duplicated by new project command.
+- [FIX] Jump to source on an array name now works.
+- [FIX] Highlighting of Switchoff, Switchon and Wait library verbs.
+- [FIX] Highlighting of #Stub directive.
+- [NF]  Project list displays different icons for: 
+        * closed file (except main file)
+        * closed main file
+        * open file (except main file)
+        * open main file
+- [NF]  Tree displays different icons for:
+        * items in the current file
+        * items not in the current file.
+        * class placeholder
+- [NF]  The effect of changing the number lines option setting is immediate.
+- [NF]  The effect of changing the line wrap option setting is immediate.
+- [NF]  Array declarations included in "global" tree.
+- [NF]  Close project action only closes project files.
+- [NF]  Check that version of Java runtime is 1.6 or higher.
+
+JIF 3.5 (Sep 2011)
+==================
+- [NF] Project refactored
+- [NF] 800x600 standard size (if Jif.cfg is not found)
+
+
+JIF 3.3 (Sep 2006)
+==================
+- [FIX] Compile a single file inf (without a project). Fixed NPE (NULL POINTER EXCEPTION)
+- [NF]  Added the relative path for compiler, interpreter etc. if checked 
+        "use relative path" JIF will search compiler, interpreter etc. in the
+        bin directory.
+
+
+JIF 3.2 (Aug 2006)
+==================
+
+- [FIX] Syntax highlighting algorithm improved.
+- [FIX] Tree display algorithm improved.
+- [FIX] Tree clicks now position the cursor on the name in the source
+- [NF]  Options highlight panel added so selection colours can be customised.
+- [NF]  Number syntax highlighting added.
+- [NF]  All syntax highlighting colours can be customised.
+- [NF]  Default dark setting added to color options.
+- [NF]  Default light setting added to color options.
+- [NF]  Options save now refreshes colours and fonts for all open documents.
+- [NF]  Options colour and font initialised to current settings (not default). 
+- [NF]  Options text changed to include all syntax types.
+- [NF]  Options cancel button added.
+- [NF]  Recent files menu changed to replace eldest when max entries reached.
+
+
+JIF 3.1 (Apr 2006)
+==================
+
+- [FIX] Syntax highlighting algorithm improved.
+- [NF]  String syntax highlighting added.
+- [NF]  Word syntax highlighting added.
+- [NF]  String syntax highlighting colour can be customised.
+- [NF]  Word syntax highlighting colour can be customised.
+- [FIX] Spaces in message (BUG6321).
+- [FIX] Error in saving the compiler path.
+- [FIX] Tool tip text fixed (BUG6323).
+- [FIX] CTRL + INS double insert error.
+- [FIX] Constant into a comment, visualised into the object tree.
+
+
+JIF 3.0 (Jan 2006)
+==================
+
+- [NF]  Main Layout changed
+- [FIX] Tree's algorithm improved.
+- [NF]  TAB spacing customizable. The TAB character is expanded into spaces (customizable)
+- [NF]  ISO-8859-1 file format (note by linux user)
+- [FIX] Now you can choose where to save your project files (no more "projects" directory)
+- [FIX] Many bug fixes
+- [NF]  "Run garbage collector" Menu Item
+- [NF]  Every project has its own switches management
+- [NF]  Added the "mode" in the project file
+- [NF]  Configuration file now is Jif.cfg. If not exits, Jif will create a default one
+        (If there are some errors, you can delete the Jif.cfg file and restart Jif)
+        All Jif configuration is stored into this file. No more hundreds of config files.
+        For the linux users: now you can pass to JIF which config file to use. So you can
+        customise Jif to be used by different users.
+- [FIX] Translation Process: now JIF sort the strings to be translated before translation process
+- [FIX] The findString method doesn't warning if the searching has arrived to the beginning of the current file
+- [FIX] The ReplaceAll method, now starts from the beginning of the current file
+- [FIX] Removed the Template Manager Management
+- [NF]  Added a new Menu (Search String in the whole project). With CTRL+F3 it's possible to 
+        search any string in the project files. Then you click on a result and jump straight to
+        the code that contains the string.
+- [NF]  Added a new Menu (Search String)
+- [FIX] Bug #4416 FIX: Search string with F3, JIF will select the found string and give the focus
+        When click on an object in the tree, the current window will receive the Focus
+- [NF]  You can select "Wrap Line" option or "Show Line number" option (not both of them)
+- [NF]  Added a message to the Output window when JIF saves the configuration file
+- [FIX] Fixed code Removed the update flag (not used)
+- [NF]  The names of files in tabs are shortened with "..."
+- [FIX] The Inform/Glulx mode menu now works properly
+- [FIX] When closing a project, the main file is properly cleared
+- [FIX] Cut option added to right click menu
+- [FIX] Spanish syntax bug fixing
+- [FIX] Added Keywords (to the syntax high lighter): 
+        Array, Replace, Release, Serial, Attribute, Property, Additive, End, Extend, 
+        Fake_Action, Import, Lowstring, Meta, NULL, Reverse, creature, held, multi, multiexcept, 
+        multiheld, multiinside, scope, special, topic, AskFor, AskTo, CommandsOn, CommandsOff, 
+        CommandsRead, Empty, GoIn, Transfer, Version, Yes, NotUnderstood, PluralFound
+
+
+JIF 2.0 (may 2005)
+==================
+
+- [NF]  Added a "Syntax Refresh" command (right mouse button)
+- [NF]  Menu "Toggle Fullscreen" (F11)
+- [NF]  Added Set/next bookmark Menu 
+- [FIX] ALT+B (Build) ALT+R (Run) deprecated. Use now: F8 => Compile F9=> Run
+- [NF]  Bat file to starting JIF in debug mode (JIF will create an err.txt file)
+        now You can choose if start JIF in debug mode or not
+- [NF]
+        Remapped Functional Keys
+        F1              View the info.txt file
+        CTRL-F2         Set Bookmark
+        F2              Next Bookmark
+        F5              Open Project
+        CTRL-F5         New project
+        F9              Compile/Build
+        CTRL+F9         Run
+        F12             Rebuild All Glulx
+        CTRL+F12        Rebuild BLB file
+        F11             Toggle Fullscreen
+
+- [NF]  Added the "alt.ini" file to manage the ALT+char keyboard re-mapping
+- [NF]  Removed the functionalKeys.ini file
+- [NF]  New command JUMP TO DEFINITION (CTRL+J): Jif jumps to the current object's definition (seek it
+        across every project File)
+- [FIX] Error with ALT+1, ALT+2, ALT+3 popup window. ShortCuts Removed.
+- [FIX] Object Tree now is updated correctly with the current opened file
+- [FIX] Object Tree now works correctly with the WRAP LINE option checked
+- [FIX] Automatic Quote string always passed to the compiler
+- [NF]  New Code assistant Management (with Cursor Position customizabled)
+- [NF]  Working Directory (project) is passed to the compiler if choosen.
+- [NF]  Automatically SAVE ALL command when close/compiling a project
+- [NF]  Update the jgoodies look&Feel
+- [NF]  Case Insensitive search for the Object Tree and the Search Box
+- [NF]  Moved the BRES and BLC path to the Configuration Panel
+- [FIX] Removed the "Save Configuration" Button in the Configuration Panel. Save automatically.

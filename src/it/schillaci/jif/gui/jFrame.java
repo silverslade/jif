@@ -893,7 +893,7 @@ public class jFrame extends JFrame implements JifConfigurationObserver, JifProje
         creditsTextArea.setColumns(20);
         creditsTextArea.setFont(new java.awt.Font("MonoSpaced", 0, 11)); // NOI18N
         creditsTextArea.setRows(5);
-        creditsTextArea.setText("JIF, a java editor for Inform\nby Alessandro Schillaci\nhttp://www.slade.altervista.org/\n\nDevelopment: \n- Alessandro Schillaci\n- Peter F. Piggott\n- Luis Fernandez\n\nContributors:\nPaolo Lucchesi\nVincenzo Scarpa\nBaltasar Garcia Perez-Schofield\nChristof Menear\nGiles Boutel\nJavier San José\nDavid Moreno\nEric Forgeot\nMax Kalus\nAdrien Saurat\nAlex V Flinsch\nDaryl McCullough\nGiancarlo Niccolai\nIgnazio di Napoli\nJoerg Rosenbauer\nMatteo De Simone\nTommaso Caldarola");
+        creditsTextArea.setText("JIF, a java editor for Inform\nby Alessandro Schillaci\nhttp://www.slade.altervista.org/\n\nDevelopment: \n- Alessandro Schillaci\n- Peter F. Piggott\n- Luis Fernandez\n\nContributors:\nPaolo Lucchesi\nVincenzo Scarpa\nBaltasar Garcia Perez-Schofield\nChristof Menear\nGiles Boutel\nJavier San Jose\nDavid Moreno\nEric Forgeot\nMax Kalus\nAdrien Saurat\nAlex V Flinsch\nDaryl McCullough\nGiancarlo Niccolai\nIgnazio di Napoli\nJoerg Rosenbauer\nMatteo De Simone\nTommaso Caldarola");
         creditsTextArea.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 5, 3, 3));
         creditsScrollPane.setViewportView(creditsTextArea);
 
@@ -5083,7 +5083,7 @@ public class jFrame extends JFrame implements JifConfigurationObserver, JifProje
             result = result + ".inf";
         }
         
-        // controllo che non esista già  un file con quel nome
+        // controllo che non esista gia un file con quel nome
         if (file.exists()) {
             if (JOptionPane.showConfirmDialog(
                     this,
@@ -5803,7 +5803,7 @@ public class jFrame extends JFrame implements JifConfigurationObserver, JifProje
         
         for (int i=0 ; i<files.length; i++) {
             file = files[i];
-            // apro il file e lo aggiungo alla lista se il checkbox è attivo
+            // apro il file e lo aggiungo alla lista se il checkbox e' attivo
             if (config.getOpenProjectFiles()) {
                 fileOpen(file.getAbsolutePath());
             }
@@ -6275,7 +6275,7 @@ public class jFrame extends JFrame implements JifConfigurationObserver, JifProje
     // --- Search --------------------------------------------------------------
 
     private void searchAllDialog() {
-        // se è presente una stringa uso quella altrimenti la prendo da quella selezionata
+        // se e' presente una stringa uso quella altrimenti la prendo da quella selezionata
         // No: vince quella selezionata
         String target = null;
         if (searchProjectTextField.getText() != null && getSelectedText() != null) {
@@ -7239,7 +7239,7 @@ public class jFrame extends JFrame implements JifConfigurationObserver, JifProje
         }
         
         // come titolo del menu, limito al max a 8 caratteri
-        // il testo incollato, sarà contenuto nel tooltip, opportunamente
+        // il testo incollato, sara' contenuto nel tooltip, opportunamente
         // modificato PLAIN -> HTML  e HTML -> PLAIN
         String test = getSelectedText();
         
@@ -7251,7 +7251,7 @@ public class jFrame extends JFrame implements JifConfigurationObserver, JifProje
         
         // Come tool tip del menu metto tutto il codice selezionato
         String tmp = getSelectedText();
-        // per vederlo tutto su più righe....lo trasformo il testo in formato HTML
+        // per vederlo tutto su piÃ¹ righe....lo trasformo il testo in formato HTML
         tmp = Utils.replace(tmp,"\n","<br>");
         mi.setToolTipText("<html>"+tmp+"</html>");
         mi.setFont(new Font("Dialog",Font.PLAIN,11));
@@ -8424,12 +8424,12 @@ public class jFrame extends JFrame implements JifConfigurationObserver, JifProje
         public void mousePressed(MouseEvent e) {
             String id = ((JMenuItem) e.getSource()).getText();
             try {
-                //se non trovo nessun carattere "§" non vado a capo
-                if (getOperation(id).indexOf("§") == -1) {
+                //se non trovo nessun carattere "Â§" non vado a capo
+                if (getOperation(id).indexOf("Â§") == -1) {
                     // inserisco la stringa senza andare a capo
                     insertString(getOperation(id));
                 } else {
-                    StringTokenizer st = new StringTokenizer(getOperation(id), "§");
+                    StringTokenizer st = new StringTokenizer(getOperation(id), "Â§");
                     while (st.hasMoreTokens()) {
                         insertString(st.nextToken() + "\n");
                     }
