@@ -1,0 +1,54 @@
+<project name="jif" default="dist" basedir=".">
+    <description>
+        Jif Build file
+    </description>
+  <!-- set global properties for this build -->
+  <property name="src" location="src"/>
+  <property name="build" location="build"/>
+  <property name="dist"  location="dist"/>
+
+  <target name="init">
+    <!-- Create the time stamp -->
+    <tstamp/>
+    <!-- Create the build directory structure used by compile -->
+    <mkdir dir="${build}"/>
+  </target>
+
+  <target name="compile" depends="init" description="compile the source " >
+    <!-- Compile the java code from ${src} into ${build} -->
+    <javac srcdir="${src}" encoding="UTF-8" destdir="${build}"/>
+	<copy todir="${build}/images">
+		<fileset dir="${src}/images"/>
+	</copy>
+	
+  </target>
+
+  <target name="dist" depends="compile" description="generate the distribution" >
+    <!-- Create the distribution directory -->
+    <mkdir dir="${dist}"/>
+
+    <!-- Put everything in ${build} into the MyProject-${DSTAMP}.jar file -->
+    <jar jarfile="${dist}/jif-${DSTAMP}.jar" basedir="${build}">
+		<fileset dir="${src}">
+			<include name="**/*.properties"/>
+			<include name="**/*.txt"/>
+			<include name="**/*.cfg"/>
+		</fileset>
+
+		<manifest>
+			<attribute name="Main-Class" value="it.schillaci.jif.gui.jFrame"/>
+		</manifest>
+	</jar>
+	
+	<!-- delete build file -->
+	<delete dir="${build}"/>
+	
+  </target>
+
+  <target name="clean"
+        description="clean up" >
+    <!-- Delete the ${build} and ${dist} directory trees -->
+    <delete dir="${build}"/>
+    <delete dir="${dist}"/>
+  </target>
+</project>
