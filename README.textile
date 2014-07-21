@@ -41,12 +41,9 @@ pre-configured to work. (see http://www.slade.altervista.org)
 * Download Bres Tools (bres and blc) and point JIF to them
 
 
-h2. Copyright and License
+h2. License
 
-Copyright (C) 2003-2014  Alessandro Schillaci
-
-WeB   : http://www.slade.altervista.org/
-e-m@il: silver.slade@tiscali.it
+JIF (2003-2014) developed by Alessandro Schillaci
 
 Jif is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License
 as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
@@ -87,9 +84,7 @@ Contributors:
 Third part components: 
     * Everaldo: Some Icons used by Jif ( www.everaldo.com )
 
---
-Web:      http://www.slade.altervista.org/   
-Project:  https://github.com/silverslade/jif
-Email:    silver.slade@tiscalinet.it 
---
+https://github.com/silverslade/jif
+silver.slade@tiscalinet.it 
+
 Alessandro Schillaci
