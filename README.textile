@@ -74,7 +74,7 @@ Contributors:
     * Baltasar G. Perez-Schofield
     * Christof Menear
     * Giles Boutel
-    * Javier San Jos�
+    * Javier San Josè
     * David Moreno
     * Eric Forgeot
     * Max Kalus
