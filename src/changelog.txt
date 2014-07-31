@@ -3,6 +3,11 @@
 [NF]  New Feature
 [FIX] Bug Fixed
 
+JIF 3.7.0 (Jun 2014)
+==================
+- [FIX] new ant build file
+
+
 JIF 3.6.1 (2013)
 ==================
 - [FIX] Using standard Java Metal look (return to the origins)

@@ -11,7 +11,7 @@ package it.schillaci.jif.core;
  * With Jif, it's possible to edit, compile and run a Text Adventure in
  * Inform format.
  *
- * Copyright (C) 2004-2013  Alessandro Schillaci
+ * Copyright (C) 2004-2014  Alessandro Schillaci
  *
  * WeB   : http://www.slade.altervista.org/
  * e-m@il: silver.slade@tiscali.it
@@ -48,12 +48,12 @@ public class Constants {
     /**
      * JIF Version
      */
-    public static final String VERSION = "3.7";
+    public static final String VERSION = "3.7.0";
     
     /**
      * JIF Build
      */
-    public static final String BUILD = "20140718001";
+    public static final String BUILD = "20140731001";
     
     /**
      * JIF Version
