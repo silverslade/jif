@@ -15,17 +15,24 @@ Inform 6 or 7 Environments
 The project has started in the 2003 and now it's in a stable state for production, and the 
 latest version is the 3.6 (Feb 2013). This project is released under the GNU GPL Licence.
 
-h2. Install JIF and other components
-
-* Install JIF
-From the 3.5 version of JIF (and above), the main application is released in the 
-JAR format. To install it, simply double-click on the JIF.jar file.
+h2. Compile JIF
 
 Since che 3.6 version, a Java Runtime 1.7 version is required.
+You can use the Jif.jar file (in the next releases) or you can compile it.
 
-The same author released an "Inform Pack": a collections of Inform/Glulx tools 
-pre-configured to work. (see http://www.slade.altervista.org)
- 
+* Download & Install Java JDK (http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+* Download & Install Ant (ant.apache.org/)
+* clone JIF repository
+<pre><code>git clone https://github.com/silverslade/jif
+</code></pre>
+* compile JIF
+<pre><code>cd jif
+ant
+</code></pre>
+
+
+h2. Install other components
+
 * Download and point JIF to the Inform compiler, 
   from http://www.inform-fiction.org/software/current.html 
 
@@ -67,7 +74,7 @@ Contributors:
     * Baltasar G. Perez-Schofield
     * Christof Menear
     * Giles Boutel
-    * Javier San Josè
+    * Javier San JosÃ¨
     * David Moreno
     * Eric Forgeot
     * Max Kalus
