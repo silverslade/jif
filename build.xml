@@ -10,6 +10,7 @@
   <target name="init">
     <!-- Create the time stamp -->
     <tstamp/>
+	
     <!-- Create the build directory structure used by compile -->
     <mkdir dir="${build}"/>
   </target>
@@ -28,7 +29,7 @@
     <mkdir dir="${dist}"/>
 
     <!-- Put everything in ${build} into the MyProject-${DSTAMP}.jar file -->
-    <jar jarfile="${dist}/jif-${DSTAMP}.jar" basedir="${build}">
+    <jar jarfile="${dist}/jif-${DSTAMP}.jar" basedir="${build}" encoding="UTF-8">
 		<fileset dir="${src}">
 			<include name="**/*.properties"/>
 			<include name="**/*.txt"/>
