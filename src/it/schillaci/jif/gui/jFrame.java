@@ -63,6 +63,7 @@ import it.schillaci.jif.project.JifProjectListModel;
 import it.schillaci.jif.project.JifProjectObserver;
 import java.awt.Checkbox;
 import java.awt.Color;
+import java.awt.Desktop;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Toolkit;
@@ -4156,7 +4157,8 @@ public class jFrame extends JFrame implements JifConfigurationObserver, JifProje
     }//GEN-LAST:event_copyActionPerformed
 
     private void readMeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readMeActionPerformed
-        tutorialDialog("readme.txt", "Read Me");
+        //tutorialDialog("readme.txt", "Read Me");
+        showPDF("manual.pdf");
     }//GEN-LAST:event_readMeActionPerformed
 
     private void textCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textCloseActionPerformed
@@ -8397,6 +8399,20 @@ public class jFrame extends JFrame implements JifConfigurationObserver, JifProje
     private int countNewFile = 0;
     // titolo di JIF, serve per aggiungerci il nome del progetto aperto
     private String jifVersion = Constants.TITLE;
+
+    private void showPDF(String path) {
+        try {
+        	Desktop desktop = null;
+            if (Desktop.isDesktopSupported()) {
+                desktop = Desktop.getDesktop();
+                File file = new File(path);
+                System.out.println("Opening "+file);
+                desktop.open(file);
+            }    	    
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     
     // --- Nested classes ------------------------------------------------------
      class PopupListenerProject extends MouseAdapter {
