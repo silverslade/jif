@@ -5469,7 +5469,7 @@ public class jFrame extends JFrame implements JifConfigurationObserver, JifProje
 
     void optionShow() {
         //optionDialog.pack();
-        optionDialog.setSize(650, 600);
+        optionDialog.setSize(700, 650);
         optionDialog.setLocationRelativeTo(this);
         optionDialog.setVisible(true);
     }
