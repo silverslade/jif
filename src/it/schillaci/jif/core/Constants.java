@@ -48,12 +48,12 @@ public class Constants {
     /**
      * JIF Version
      */
-    public static final String VERSION = "3.7.0";
+    public static final String VERSION = "3.7.1make";
     
     /**
      * JIF Build
      */
-    public static final String BUILD = "20140731001";
+    public static final String BUILD = "20140805001";
     
     /**
      * JIF Version
