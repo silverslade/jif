@@ -15,7 +15,7 @@ This project is released under the GNU GPL Licence.
 
 h2. Compile JIF
 
-Since che 3.6+ version, a Java Runtime 1.7 version is required.
+Since 3.6+ version, a Java Runtime 1.7 version is required.
 You can use the Jif.jar file (in the next releases) or you can compile it.
 
 * Download & Install Java JDK (http://www.oracle.com/technetwork/java/javase/downloads/index.html)
