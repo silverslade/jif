@@ -1,7 +1,7 @@
 h1. JIF - a java editor for Inform
 
 Version 3.7								   
-2003-2014 Alessandro Schillaci
+2003-2016 Alessandro Schillaci
 
 h2. Overview
 
