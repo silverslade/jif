@@ -11,7 +11,7 @@ package it.schillaci.jif.gui;
  * With Jif, it's possible to edit, compile and run a Text Adventure in
  * Inform format.
  *
- * Copyright (C) 2004-2013  Alessandro Schillaci
+ * Copyright (C) 2004-2016  Alessandro Schillaci
  *
  * WeB   : http://www.slade.altervista.org/
  * e-m@il: silver.slade@tiscali.it
@@ -894,7 +894,7 @@ public class jFrame extends JFrame implements JifConfigurationObserver, JifProje
         creditsTextArea.setColumns(20);
         creditsTextArea.setFont(new java.awt.Font("MonoSpaced", 0, 11)); // NOI18N
         creditsTextArea.setRows(5);
-        creditsTextArea.setText("JIF, a java editor for Inform\nby Alessandro Schillaci\nhttp://www.slade.altervista.org/\n\nDevelopment: \n- Alessandro Schillaci\n- Peter F. Piggott\n- Luis Fernandez\n\nContributors:\nPaolo Lucchesi\nVincenzo Scarpa\nBaltasar Garcia Perez-Schofield\nChristof Menear\nGiles Boutel\nJavier San Jose\nDavid Moreno\nEric Forgeot\nMax Kalus\nAdrien Saurat\nAlex V Flinsch\nDaryl McCullough\nGiancarlo Niccolai\nIgnazio di Napoli\nJoerg Rosenbauer\nMatteo De Simone\nTommaso Caldarola");
+        creditsTextArea.setText("JIF, a java editor for Inform\nby Alessandro Schillaci\nhttp://www.slade.altervista.org/\n\nDevelopment: \n- Alessandro Schillaci\n- Peter F. Piggott\n- Luis Fernandez\n\nContributors:\nPaolo Lucchesi\nVincenzo Scarpa\nBaltasar Garcia Perez-Schofield\nChristof Menear\nGiles Boutel\nJavier San José\nDavid Moreno\nEric Forgeot\nMax Kalus\nAdrien Saurat\nAlex V Flinsch\nDaryl McCullough\nGiancarlo Niccolai\nIgnazio di Napoli\nJoerg Rosenbauer\nMatteo De Simone\nTommaso Caldarola");
         creditsTextArea.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 5, 3, 3));
         creditsScrollPane.setViewportView(creditsTextArea);
 
@@ -2704,9 +2704,9 @@ public class jFrame extends JFrame implements JifConfigurationObserver, JifProje
         findTextField.setColumns(15);
         findTextField.setFont(new java.awt.Font("Courier New", 0, 12)); // NOI18N
         findTextField.setToolTipText(bundle.getString("JTOOLBAR_SEARCH")); // NOI18N
+        findTextField.setMargin(null);
         findTextField.setMaximumSize(new java.awt.Dimension(111, 20));
-        findTextField.setMinimumSize(new java.awt.Dimension(10, 22));
-        findTextField.setPreferredSize(new java.awt.Dimension(111, 29));
+        findTextField.setMinimumSize(new java.awt.Dimension(20, 20));
         jToolBarCommon.add(findTextField);
 
         findButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/filefind.png"))); // NOI18N
@@ -2784,10 +2784,10 @@ public class jFrame extends JFrame implements JifConfigurationObserver, JifProje
             }
         });
         codeTree.addTreeExpansionListener(new javax.swing.event.TreeExpansionListener() {
+            public void treeCollapsed(javax.swing.event.TreeExpansionEvent evt) {
+            }
             public void treeExpanded(javax.swing.event.TreeExpansionEvent evt) {
                 codeTreeTreeExpanded(evt);
-            }
-            public void treeCollapsed(javax.swing.event.TreeExpansionEvent evt) {
             }
         });
         codeTree.addTreeSelectionListener(new javax.swing.event.TreeSelectionListener() {
@@ -2911,7 +2911,6 @@ public class jFrame extends JFrame implements JifConfigurationObserver, JifProje
 
         filePanel.setLayout(new java.awt.BorderLayout());
 
-        fileTabbedPane.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
         fileTabbedPane.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
         fileTabbedPane.setMinimumSize(new java.awt.Dimension(350, 350));
         fileTabbedPane.setPreferredSize(new java.awt.Dimension(700, 450));
@@ -4788,7 +4787,8 @@ public class jFrame extends JFrame implements JifConfigurationObserver, JifProje
         sp.setToolTipText(fileName.getPath());
         sp.setLineNumbers(config.getNumberLines());
  
-        fileTabbedPane.add(sp, fileName.getTabTitle());
+        //fileTabbedPane.add(sp, fileName.getTabTitle());
+        fileTabbedPane.add(sp, fileName.getName());
 
         buffer.put(fileName, sp);
         updateBuffer();
@@ -5103,7 +5103,8 @@ public class jFrame extends JFrame implements JifConfigurationObserver, JifProje
         buffer.remove(getSelectedFileName());
         buffer.put(newName, getSelectedScrollPane());
         
-        setSelectedTitle(newName.getTabTitle());
+        //setSelectedTitle(newName.getTabTitle());
+        setSelectedTitle(newName.getName());
         setSelectedFileName(newName.getPath());
         
         fileSave();
