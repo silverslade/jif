@@ -12,12 +12,11 @@ compile and run a text adventure in the z-code and glulx formats.
 Inform 7 has been developed with a new Integrated Editor but JIF can be used in any 
 Inform 6 or 7 Environments
 
-The project has started in the 2003 and now it's in a stable state for production, and the 
-latest version is the 3.6 (Feb 2013). This project is released under the GNU GPL Licence.
+The project has started in the 2003 and now it's in a stable state for production. This project is released under the GNU GPL Licence.
 
 h2. Compile JIF
 
-Since che 3.6 version, a Java Runtime 1.7 version is required.
+Since che 3.6+ version, a Java Runtime 1.7 version is required.
 You can use the Jif.jar file (in the next releases) or you can compile it.
 
 * Download & Install Java JDK (http://www.oracle.com/technetwork/java/javase/downloads/index.html)
