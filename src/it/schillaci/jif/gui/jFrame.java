@@ -977,8 +977,8 @@ public class jFrame extends JFrame implements JifConfigurationObserver, JifProje
 
         infoScrollPane.setAutoscrolls(true);
 
-        infoTextArea.setBackground(new java.awt.Color(204, 204, 204));
         infoTextArea.setEditable(false);
+        infoTextArea.setBackground(new java.awt.Color(204, 204, 204));
         infoTextArea.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         infoTextArea.setBorder(javax.swing.BorderFactory.createEmptyBorder(2, 5, 2, 5));
         infoTextArea.setMaximumSize(new java.awt.Dimension(0, 0));
@@ -1139,8 +1139,8 @@ public class jFrame extends JFrame implements JifConfigurationObserver, JifProje
         colorFontPanel.setPreferredSize(new java.awt.Dimension(277, 260));
         colorFontPanel.setLayout(new java.awt.GridBagLayout());
 
-        colorEditorPane.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), javax.swing.BorderFactory.createEmptyBorder(2, 5, 2, 5)));
         colorEditorPane.setEditable(false);
+        colorEditorPane.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), javax.swing.BorderFactory.createEmptyBorder(2, 5, 2, 5)));
         colorEditorPane.setMaximumSize(new java.awt.Dimension(50, 50));
         colorEditorPane.setMinimumSize(new java.awt.Dimension(50, 50));
         colorEditorPane.setPreferredSize(new java.awt.Dimension(50, 180));
@@ -1475,8 +1475,8 @@ public class jFrame extends JFrame implements JifConfigurationObserver, JifProje
 
         colorHighlightPanel.setLayout(new java.awt.GridBagLayout());
 
-        highlightEditorPane.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), javax.swing.BorderFactory.createEmptyBorder(2, 5, 2, 5)));
         highlightEditorPane.setEditable(false);
+        highlightEditorPane.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), javax.swing.BorderFactory.createEmptyBorder(2, 5, 2, 5)));
         highlightEditorPane.setMaximumSize(new java.awt.Dimension(50, 50));
         highlightEditorPane.setMinimumSize(new java.awt.Dimension(50, 50));
         highlightEditorPane.setPreferredSize(new java.awt.Dimension(50, 180));
@@ -2232,8 +2232,8 @@ public class jFrame extends JFrame implements JifConfigurationObserver, JifProje
         tutorialLabel.setText("jLabel5");
         tutorialDialog.getContentPane().add(tutorialLabel, java.awt.BorderLayout.NORTH);
 
-        tutorialEditorPane.setBorder(javax.swing.BorderFactory.createEmptyBorder(2, 5, 2, 5));
         tutorialEditorPane.setEditable(false);
+        tutorialEditorPane.setBorder(javax.swing.BorderFactory.createEmptyBorder(2, 5, 2, 5));
         tutorialScrollPane.setViewportView(tutorialEditorPane);
 
         tutorialDialog.getContentPane().add(tutorialScrollPane, java.awt.BorderLayout.CENTER);
@@ -2784,10 +2784,10 @@ public class jFrame extends JFrame implements JifConfigurationObserver, JifProje
             }
         });
         codeTree.addTreeExpansionListener(new javax.swing.event.TreeExpansionListener() {
-            public void treeCollapsed(javax.swing.event.TreeExpansionEvent evt) {
-            }
             public void treeExpanded(javax.swing.event.TreeExpansionEvent evt) {
                 codeTreeTreeExpanded(evt);
+            }
+            public void treeCollapsed(javax.swing.event.TreeExpansionEvent evt) {
             }
         });
         codeTree.addTreeSelectionListener(new javax.swing.event.TreeSelectionListener() {
@@ -3229,7 +3229,7 @@ public class jFrame extends JFrame implements JifConfigurationObserver, JifProje
         editMenu.add(nextBookmarkMenuItem);
 
         extractStringsMenuItem.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        extractStringsMenuItem.setText("Extract Strings");
+        extractStringsMenuItem.setText(bundle.getString("JFRAME_MENU_EXTRACT_STRING")); // NOI18N
         extractStringsMenuItem.setToolTipText(bundle.getString("JFRAME_EXTRACT_STRINGS")); // NOI18N
         extractStringsMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3239,7 +3239,7 @@ public class jFrame extends JFrame implements JifConfigurationObserver, JifProje
         editMenu.add(extractStringsMenuItem);
 
         translateMenuItem.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        translateMenuItem.setText("Translate Strings");
+        translateMenuItem.setText(bundle.getString("JFRAME_MENU_TRANSLATE_TEXT")); // NOI18N
         translateMenuItem.setToolTipText(bundle.getString("JFRAME_TRANSLATE")); // NOI18N
         translateMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

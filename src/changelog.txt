@@ -5,6 +5,8 @@
 
 JIF 3.7.1 (July 2016)
 - tabbed panel
+- translated new strings
+
 
 JIF 3.7.0 (Aug 2014)
 ==================
