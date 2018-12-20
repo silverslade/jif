@@ -11,7 +11,7 @@ package it.schillaci.jif.inform;
  * With Jif, it's possible to edit, compile and run a Text Adventure in
  * Inform 6 format.
  *
- * Copyright (C) 2004-2016  Alessandro Schillaci
+ * Copyright (C) 2004-2018  Alessandro Schillaci
  *
  * WeB   : http://www.slade.altervista.org/JIF/
  * e-m@il: silver.slade@tiscali.it
